@@ -1,0 +1,156 @@
+* { /*aqui resetamos algumas configurações que o navegador costuma aplicar*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex; /*o valor flex faz com que os elementos fiquem alinhados em linhas*/
+    justify-content: center;
+}
+
+.instagram-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 60%;
+    height: 100vh;
+}
+
+.insta-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.insta-example img {
+    height: 50rem;
+}
+
+.insta-continue {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column; /*o flex estava em formato linha, agora foi mudado para coluna. isso tbm inverte o align-items e justify-content*/
+    width: 50rem;
+    height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.group:nth-child(1) { /* ":nth-child()" é um seletor de que pega os "filhos" de uma classe. nth é enésimo. */
+    min-height: 19rem;    
+}
+
+.insta-logo {
+    height: 3rem;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    max-height: 50%;
+    overflow: hidden;     
+}
+
+.profile-photo img {
+    height: 6rem;
+}
+
+.login {
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+
+.another-acc {
+    color: rgb(160,160,160);
+}
+
+.link-blue {
+    color: #0095f6;
+}
+
+.get-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0; 
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+
+.app-download:nth-child(1) {
+    background-image: url(./img/applestore.png);
+}
+
+.app-download:nth-child(2) {
+    background-image: url(./img/googleplay.png);
+}
+
+/*abaixo estão setadas configurações para diferentes tipos de telas.*/
+
+@media (max-width: 1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px){
+    body {
+        background-color: #ffffff;
+    }    
+    .instagram-wrapper {
+        width: 90%;
+    }
+    .insta-example {
+        display: none; /*desaparece com a imagem exemplo do instagram quando a tela é muito estreita*/
+    }
+    .insta-continue {
+        width: 100%;
+    }
+    .group {
+        border: 1px solid transparent; /*imita melhor ainda o comportamento do app mobile, que não ter bordas*/
+    }
+}
